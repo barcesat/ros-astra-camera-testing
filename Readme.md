@@ -20,16 +20,18 @@ source devel/setup.bash
 	catkin_make
 
 create a file:
-	sudo nano /etc/udev/rules.d/orbbec-usb.rules
+    sudo nano /etc/udev/rules.d/orbbec-usb.rules
 
 copy and paste and save:
+
 SUBSYSTEM=="usb", ATTR{idProduct}=="0401", ATTR{idVendor}=="2bc5", MODE:="0666", OWNER:="root", GROUP:="video"
 SUBSYSTEM=="usb", ATTR{idProduct}=="0402", ATTR{idVendor}=="2bc5", MODE:="0666", OWNER:="root", GROUP:="video"
 SUBSYSTEM=="usb", ATTR{idProduct}=="0403", ATTR{idVendor}=="2bc5", MODE:="0666", OWNER:="root", GROUP:="video"
 SUBSYSTEM=="usb", ATTR{idProduct}=="0404", ATTR{idVendor}=="2bc5", MODE:="0666", OWNER:="root", GROUP:="video"
 SUBSYSTEM=="usb", ATTR{idProduct}=="0405", ATTR{idVendor}=="2bc5", MODE:="0666", OWNER:="root", GROUP:="video"
 
-	sudo udevadm control --reload-rules
+reload udev rules:
+    sudo udevadm control --reload-rules
 
 important!!!! unplug and plug back the camera
 
